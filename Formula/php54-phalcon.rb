@@ -19,11 +19,8 @@ class Php54Phalcon < AbstractPhp54Extension
   depends_on "pcre"
 
   def install
-    if MacOS.prefer_64_bit?
-      Dir.chdir "build/64bits"
-    else
-      Dir.chdir "build/32bits"
-    end
+    
+    Dir.chdir "build/64bits"
 
     ENV.universal_binary if build.universal?
 
